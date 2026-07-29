@@ -1,5 +1,5 @@
 /*
-  Task 8: Sensor-to-Servo Mapping with Noise Filtering (ESP32)
+  Task 7: Sensor-to-Servo Mapping with Noise Filtering (ESP32)
   Reads ADC input on GPIO 34, applies an Exponential Moving Average (EMA) filter
   to eliminate jitter, maps the smoothed 0-4095 range to 0-180 degrees, and controls
   a servo motor on GPIO 18.
@@ -34,7 +34,7 @@ void setup() {
 
   filteredADC = analogRead(ANALOG_PIN);
 
-  Serial.println("Task 8 Initialized: Smoothed Sensor-to-Servo Mapping.");
+  Serial.println("Task 7 Initialized: Smoothed Sensor-to-Servo Mapping.");
 }
 
 void loop() {
