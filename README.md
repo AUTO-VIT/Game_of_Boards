@@ -25,7 +25,7 @@ Each sketch is located in its own directory matching Arduino IDE project convent
 | 2 | [`Task2_Serial_Controlled_Blink/`](./Task2_Serial_Controlled_Blink/Task2_Serial_Controlled_Blink.ino) | UART Serial communication (115200 baud), non-blocking `millis()` state machine | GPIO 2, USB UART |
 | 3 | [`Task3_LED_PWM_Fading/`](./Task3_LED_PWM_Fading/Task3_LED_PWM_Fading.ino) | ESP32 LEDC PWM hardware timers, 10-bit resolution fading | GPIO 4 |
 | 4 | [`Task4_Pattern_Blink/`](./Task4_Pattern_Blink/Task4_Pattern_Blink.ino) | Structured modular functions, Morse code S.O.S. pattern (`... --- ...`) | GPIO 2 |
-| 5 | [`Task5_Servo_Motor_PWM/`](./Task5_Servo_Motor_PWM/Task5_Servo_Motor_PWM.ino) | 50 Hz PWM servo sweep using `ESP32Servo` library | GPIO 18, External 5V |
+| 5 | [`Task5_Servo_Motor_PWM/`](./Task5_Servo_Motor_PWM/Task5_Servo_Motor_PWM.ino) | PWM servo sweep using standard `Servo.h` library | GPIO 18, External 5V |
 | 6 | [`Task6_Analog_Sensor_Read/`](./Task6_Analog_Sensor_Read/Task6_Analog_Sensor_Read.ino) | 12-bit ADC sampling ($0-4095$), voltage calculation ($0-3.3\text{V}$) | GPIO 34 |
 | 7 | [`Task7_Sensor_To_Servo_Mapping/`](./Task7_Sensor_To_Servo_Mapping/Task7_Sensor_To_Servo_Mapping.ino) | Exponential Moving Average (EMA) filtering, deadband thresholding, analog mapping | GPIO 34 (ADC) $\rightarrow$ GPIO 18 (Servo) |
 
@@ -38,7 +38,7 @@ Each sketch is located in its own directory matching Arduino IDE project convent
      `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`
    - Go to **Tools $\rightarrow$ Board $\rightarrow$ Boards Manager** and install **esp32** by Espressif Systems.
 2. **Libraries**:
-   - Install **ESP32Servo** library via **Tools $\rightarrow$ Manage Libraries...** (required for Task 5 & Task 7).
+   - Uses standard **Servo.h** library included with the Arduino IDE / ESP core (required for Task 5 & Task 7).
 
 ---
 
@@ -57,7 +57,7 @@ Demonstrates 10-bit PWM fading using ESP32's hardware LEDC timer peripheral with
 Modular functions execute S.O.S. Morse code timings.
 
 ### Task 5: Servo Motor PWM Control
-Generates 50 Hz PWM signals via `ESP32Servo` to sweep shaft position between 0° and 180°.
+Generates PWM signals via `Servo.h` to sweep shaft position between 0° and 180°.
 
 ### Task 6: Analog Sensor Read
 Samples 12-bit ADC values ($0-4095$) from GPIO 34 and outputs converted voltage ($0-3.3\text{V}$) to Serial Monitor.
