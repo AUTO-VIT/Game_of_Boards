@@ -1,23 +1,13 @@
-/*
-  Task 1: Basic LED Blink
-  Board: ESP32 / ESP8266
-  Pin: GPIO 2 (Onboard LED on most ESP boards)
-*/
-
-#include <Arduino.h>
-
-// GPIO Pin Definition
-const uint8_t LED_PIN = 2; // Onboard LED on ESP32/ESP8266
+// Task 1: Basic LED Blink
+int ledPin = 2;
 
 void setup() {
-  // Configure GPIO 2 as a digital output pin
-  pinMode(LED_PIN, OUTPUT);
+  pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
-  digitalWrite(LED_PIN, HIGH); // Turn LED ON (3.3V)
-  delay(1000);                 // Wait 1 second
-
-  digitalWrite(LED_PIN, LOW);  // Turn LED OFF (0V)
-  delay(1000);                 // Wait 1 second
+  digitalWrite(ledPin, HIGH);
+  delay(1000);
+  digitalWrite(ledPin, LOW);
+  delay(1000);
 }
